@@ -1,17 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <search></search>
+    <div class="row  mx-1">
+      <capital-list class="col-md-6 my-2"></capital-list>
+      <country v-if="showCountry && country" class="col-md-6 my-2"></country>
+    </div>
+    
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Search from "./components/Search.vue";
+import CapitalList from "./components/CapitalList.vue";
+import Country from "./components/Country.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Search,
+    CapitalList,
+    Country
+  },
+  computed:{
+    showCountry(){
+      return this.$store.getters.showCountry
+    },
+    country(){
+      return this.$store.getters.getCountry
+    }
   }
-}
+};
 </script>
 
 <style>
@@ -19,8 +36,5 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
