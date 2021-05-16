@@ -46,6 +46,7 @@ export default {
                 this.error=error.message
             }
             this.loading=false;
+            this.capital=''
         }
     }
 };
