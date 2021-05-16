@@ -1,5 +1,5 @@
 <template>
-  <li class="list-group-item" ref="li" @click="countryRead" @keypress.enter="countryRead" >
+  <li class="list-group-item" ref="li" @click="countryRead"  >
     {{ capital }}
     <span class="close" @click="deleteCapital">X</span>
   </li>

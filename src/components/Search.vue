@@ -1,5 +1,7 @@
 <template>
-  <div id="search " class="my-3 mx-3 d-flex flex-wrap">
+<form action="" @submit.prevent="search" >
+   <div id="search " class="my-3 mx-3 d-flex flex-wrap">
+
     <div class="input-group ">
       <input
         type="text"
@@ -8,12 +10,14 @@
         v-model="capital"
       />
       <div class="input-group-append ">
-        <button v-if="!loading" class="btn btn-primary" @click="search">Search</button>
+        <button v-if="!loading" class="btn btn-primary" >Search</button>
         <p v-if="loading">Searching...</p>
       </div>
     </div>
     <p class="mt-3" v-if="!!error">{{error}}</p>
   </div>
+</form>
+ 
 </template>
 
 <script>
